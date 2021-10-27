@@ -1,0 +1,24 @@
+log.map <- function(a.lower=0, a.upper=4, x , N)
+  {
+ 
+ # a.lower: greatest lower bound of a
+ # a.upper: greatest upper bound of a 
+ # x: 1st sequence value 
+ # N: number of sequence values to be shown
+ 
+ #Creating the bifurcation parameter given its greatest lower bound and upper bound
+  a <- seq(a.upper, a.lower, 0.000001)
+  
+ #Creating the vector where the sequence values are going to be printed
+  z = 1:N
+  
+ #Replacing the 1st value of the vector with the 1st value of the sequence
+  z[1] = x
+  
+ #This for calculates the sequence values given the values of a given (in the project given, the values of a are between 0 and 4)
+  for (j in 1:length(a)){
+  for(i in 1:(N-1)){
+    z[i+1] <- a[j] * z[i]  * (1 - z[i])
+  }}
+  print(z) 
+  }

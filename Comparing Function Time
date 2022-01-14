@@ -1,0 +1,21 @@
+time1 = Sys.time() #keeping when the process starts running
+n = 1 
+xn = 0
+while (xn < exp(1)) { #we know both functions' limit is Euler's number 
+  n = n+1
+  xn = (1+ (1/n))^n 
+}
+time2 = Sys.time() #keeping when the process stops running
+time2-time1 #time it took R to process the limit
+
+#Similarly, we continue with the second function
+time1 = Sys.time()
+n = 1 
+xn = 0
+fun = function(n) sum(1/factorial(seq(n)))
+while (xn < exp(1)) {
+  n = n+1
+  xn =fun(n) +1 
+}
+time2 = Sys.time()
+time2-time1
